@@ -11,6 +11,7 @@ $white: hsl(0, 0%, 100%);
 //fonts
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
 
+$font: 'Space Mono', monospace;
 
 * {
   margin: 0;
@@ -22,7 +23,7 @@ body {
   max-width: 1440px;
   margin: 0 auto;
   background-color: $color-neutral-light;
-  font-family: 'Space Mono', monospace;
+  font-family: $font;
   color: $color-neutral-dark;
 }
 
@@ -51,6 +52,7 @@ body {
     background: $color-neutral-light-one;
     font-size: 18px;
     font-weight: 700;
+    font-family: $font;
     color: $color-neutral-dark;
     outline: none;
     border: none;
@@ -65,7 +67,21 @@ body {
   div:active{
     border: 3px solid $color-primary;
   }
- 
+}
 
+.btn {
+  background-color: $color-neutral-dark;
+  width: 120px;
+  height: 40px;
+  color: $white;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: $font;
+  border-radius: 5px;
+  border: none;
+}
 
+.btn:hover {
+  background-color: $color-primary;
+  color: $color-neutral-dark;
 }
