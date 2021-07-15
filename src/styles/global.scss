@@ -20,11 +20,51 @@ $font: 'Space Mono', monospace;
 }
 
 body {
-  max-width: 1440px;
-  margin: 0 auto;
   background-color: $color-neutral-light;
   font-family: $font;
   color: $color-neutral-dark;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  h1 {
+    text-align: center;
+    font-size: 22px;
+    letter-spacing: 10px;
+    padding-bottom: 50px;
+  }
+}
+
+.container {
+  width: 800px;
+  height: auto;
+  background-color: $white;
+  padding: 20px;
+  border-radius: 25px;
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    &--left {
+      width: 100%;
+      margin-right: 20px;
+      padding: 10px;
+    }
+    &--right {
+      width: 100%;
+      border-radius: 15px;
+      background-color: $color-neutral-dark;
+      padding: 10px;
+      div p {
+        color: $white;
+      }
+      div span {
+        color: $color-neutral-light-one;
+        font-size: 12px;
+      }
+    }
+  }
+
 }
 
 .input {
