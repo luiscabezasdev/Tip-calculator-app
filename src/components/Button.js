@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Button = () => {
+const Button = ({value}) => {
   return (
     <button className="btn">
-      5%
+      {value}
     </button>
   )
 }
