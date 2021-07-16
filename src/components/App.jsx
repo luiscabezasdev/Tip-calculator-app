@@ -24,16 +24,35 @@ const App = () => {
           </div>
           <div className="container__content--right">
             <div className="container__content--right-text">
-              <p>
-                Tip Amount
-              </p>
-              <span>/ person</span>
-              <p>
-                Total
-              </p>
-              <span>/ person</span>
-            </div>
-            <Button/>
+              <div className="container__content--right-field">
+                <div>
+                  <p>
+                    Tip Amount
+                  </p>
+                  <span>/ person</span>
+                </div>
+                <br/>
+                <br/>
+                <div>
+                  <p>
+                    Total
+                  </p>
+                  <span>/ person</span>
+                </div>
+
+              </div>
+              <div className="container__content--right-field">
+                <div className="container__content--right-value">
+                  $4.27
+                </div>
+                <br/>
+                <br/>
+                <div className="container__content--right-value">
+                  $32.79
+                </div>
+              </div>
+              </div>
+            <Button value="RESET" style="right" />
           </div>
         </div>
       </div>
