@@ -1,17 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Input from './Input';
 import Button from './Button';
 import dollar from '../images/dollar-symbol.svg';
 import user from '../images/Group.svg'
 
 const App = () => {
+  const [ numbers, setNumbers ] = useState('');
+  const [ people, setPeople ] = useState(1);
+
+  console.log(setNumbers.value);
+
   return (
     <>
       <h1>SPLI <br/> TTER</h1>
       <div className="container">
         <div className="container__content">
           <div className="container__content--left">
-            <Input value="Bill" images={dollar}/>
+            <Input 
+              images={dollar}
+              numbers={numbers}
+              changeState={setNumbers}
+              />
             <p className="container__text">Select Tip %</p>
             <div className="container__btn">
               <Button value="5%" />
@@ -19,8 +28,13 @@ const App = () => {
               <Button value="15%" />
               <Button value="25%" />
               <Button value="50%" />
+              <input className="input__into" type="number" placeholder="Custom" />
             </div>
-            <Input value="Number of People" images={user} />
+            <Input
+              images={user}
+              numbers={people}
+              changeState={setPeople}
+              />
           </div>
           <div className="container__content--right">
             <div className="container__content--right-text">

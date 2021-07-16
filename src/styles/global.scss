@@ -176,4 +176,8 @@ body {
       padding-bottom: 25px;
     }
   }
+
+  .input__into::placeholder {
+    text-align: center;
+  }
 }
