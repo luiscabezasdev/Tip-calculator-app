@@ -7,21 +7,21 @@ import user from '../images/Group.svg'
 const App = () => {
   const [ bill, setBill ] = useState(0);
   const [ people, setPeople ] = useState(0);
+  const [ value, setValue ] = useState(0)
 
-  let calculo = (bill * 5) / 100;
+  let calculo = (bill * value) / 100;
+  
   let total = (bill / people) + Number(calculo / people);
+  
+  
   let totalPeople = total.toFixed(2);
   let amount = (calculo / people);
   let amountFix = amount.toFixed(2);
+  
+  let resultado = (value === 0) ? 0 : (value !== 0) ? totalPeople : 0 ;
 
-
-
-
-  console.log(calculo)
-  console.log("porcentaje " +  (bill * 15) / 100);
-  console.log(calculo / people);
-  console.log((bill / people) + Number(calculo / people));
-  /* console.log((bill + calculo) / people); */
+  console.log(value)
+  console.log('resultado ' + resultado);
 
   return (
     <>
@@ -37,13 +37,34 @@ const App = () => {
               />
             <p className="container__text">Select Tip %</p>
             <div className="container__btn">
-              <Button value={5} />
-              <Button value={10} />
-              <Button value={15} />
-              <Button value={25} />
-              <Button value={50} />
+              <Button
+                value={5}
+                porcentaje={value}
+                cambioPorcentaje={setValue}
+              />
+              <Button
+                value={10}
+                porcentaje={value}
+                cambioPorcentaje={setValue}
+                />
+              <Button 
+                value={15}
+                porcentaje={value}
+                cambioPorcentaje={setValue}
+                />
+              <Button 
+                value={25} 
+                porcentaje={value}
+                cambioPorcentaje={setValue}
+              />
+              <Button 
+                value={50} 
+                porcentaje={value}
+                cambioPorcentaje={setValue}
+                />
               <input className="input__into" type="number" placeholder="Custom" />
             </div>
+            { people === 0 ? <p>Don't be zero</p> : '' }
             <Input
               value='Number of People'
               images={user}
@@ -72,16 +93,21 @@ const App = () => {
               </div>
               <div className="container__content--right-field">
                 <div className="container__content--right-value">
-                  ${amountFix === NaN && amountFix === Infinity ? 0 : amountFix}
+                  ${isNaN(amountFix) ? 0 : (amountFix == Infinity) ? 0 : amountFix}
                 </div>
                 <br/>
                 <br/>
                 <div className="container__content--right-value">
-                  ${totalPeople == 'NaN' && totalPeople == 'Infinity' ? 0 : totalPeople}
+                  ${isNaN(resultado) ? 0 : (resultado === Infinity) ? 0 : resultado}
                 </div>
               </div>
               </div>
-            <Button value="RESET" style="right" />
+            <Button 
+              value="RESET"
+              style="right"
+              porcentaje={value}
+              cambioPorcentaje={setValue}
+            />
           </div>
         </div>
       </div>
