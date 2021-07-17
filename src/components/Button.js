@@ -3,7 +3,7 @@ import React from 'react';
 const Button = ({value, style}) => {
   return (
     <button className={`btn ${style}`}>
-      {value}
+      {value}%
     </button>
   )
 }

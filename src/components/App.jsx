@@ -5,10 +5,23 @@ import dollar from '../images/dollar-symbol.svg';
 import user from '../images/Group.svg'
 
 const App = () => {
-  const [ numbers, setNumbers ] = useState('');
-  const [ people, setPeople ] = useState(1);
+  const [ bill, setBill ] = useState(0);
+  const [ people, setPeople ] = useState(0);
 
-  console.log(setNumbers.value);
+  let calculo = (bill * 5) / 100;
+  let total = (bill / people) + Number(calculo / people);
+  let totalPeople = total.toFixed(2);
+  let amount = (calculo / people);
+  let amountFix = amount.toFixed(2);
+
+
+
+
+  console.log(calculo)
+  console.log("porcentaje " +  (bill * 15) / 100);
+  console.log(calculo / people);
+  console.log((bill / people) + Number(calculo / people));
+  /* console.log((bill + calculo) / people); */
 
   return (
     <>
@@ -16,24 +29,26 @@ const App = () => {
       <div className="container">
         <div className="container__content">
           <div className="container__content--left">
-            <Input 
+            <Input
+              value='Bill'
               images={dollar}
-              numbers={numbers}
-              changeState={setNumbers}
+              estado={bill}
+              cambioEstado={setBill}
               />
             <p className="container__text">Select Tip %</p>
             <div className="container__btn">
-              <Button value="5%" />
-              <Button value="10%" />
-              <Button value="15%" />
-              <Button value="25%" />
-              <Button value="50%" />
+              <Button value={5} />
+              <Button value={10} />
+              <Button value={15} />
+              <Button value={25} />
+              <Button value={50} />
               <input className="input__into" type="number" placeholder="Custom" />
             </div>
             <Input
+              value='Number of People'
               images={user}
-              numbers={people}
-              changeState={setPeople}
+              estado={people}
+              cambioEstado={setPeople}
               />
           </div>
           <div className="container__content--right">
@@ -57,12 +72,12 @@ const App = () => {
               </div>
               <div className="container__content--right-field">
                 <div className="container__content--right-value">
-                  $4.27
+                  ${amountFix === NaN && amountFix === Infinity ? 0 : amountFix}
                 </div>
                 <br/>
                 <br/>
                 <div className="container__content--right-value">
-                  $32.79
+                  ${totalPeople == 'NaN' && totalPeople == 'Infinity' ? 0 : totalPeople}
                 </div>
               </div>
               </div>

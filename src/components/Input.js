@@ -1,12 +1,6 @@
 import React from 'react';
 
-const Input = ({value, images, numbers, changeState}) => {
-
-  const onChange = (e) => {
-    changeState(e.target.value)
-  }
-
-  console.log(changeState.value);
+const Input = ({estado, cambioEstado, value, images}) => {
 
   return (
     <div className="input">
@@ -19,9 +13,8 @@ const Input = ({value, images, numbers, changeState}) => {
           <input
             className="input__into"
             type="number"
-            name="bill"
-            value={numbers}
-            onChange={onChange}
+            value={estado}
+            onChange={e => (cambioEstado(e.target.value))}
             />
         </div>
       </label>
