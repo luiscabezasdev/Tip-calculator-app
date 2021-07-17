@@ -14,7 +14,7 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.jsx'],
-    alias: {
+    alias:{
       '@components': path.resolve(__dirname, 'src/components/'),
       '@styles': path.resolve(__dirname, 'src/styles')
     }
@@ -46,24 +46,24 @@ module.exports = {
       {
         test: /\.(png|jpg|svg)$/,
         type: "asset/resource",
-      },
+      }
     ]
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: './public/index.html',
-      filename: 'index.html'
     }),
     new MiniCssExtractPlugin({
       filename: '[name].css'
     }),
-    new CleanWebpackPlugin()
+    new CleanWebpackPlugin(),
   ],
-  optimization: {
-    minimize: true,
-    minimizer: [
-      new CssMinimizerPlugin(),
-      new TerserPlugin(),
-    ]
-  }
+  // optimizations: {
+  //   minimize: true,
+  //   minimizer: [
+  //     new CssMinimizerPlugin(),
+  //     new TerserPlugin()
+
+  //   ]
+  // }
 }
