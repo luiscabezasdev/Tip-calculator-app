@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import Input from './Input';
 import Button from './Button';
-import dollar from '../images/dollar-symbol.svg';
-import user from '../images/Group.svg'
+import dollar from '../images/icon-dollar.svg';
+import user from '../images/icon-person.svg'
 
 const App = () => {
   const [ bill, setBill ] = useState(0);
