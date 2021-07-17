@@ -14,7 +14,7 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.jsx'],
-    alias:{
+    alias: {
       '@components': path.resolve(__dirname, 'src/components/'),
       '@styles': path.resolve(__dirname, 'src/styles')
     }
@@ -58,12 +58,11 @@ module.exports = {
     }),
     new CleanWebpackPlugin(),
   ],
-  // optimizations: {
-  //   minimize: true,
-  //   minimizer: [
-  //     new CssMinimizerPlugin(),
-  //     new TerserPlugin()
-
-  //   ]
-  // }
+  optimizations: {
+    minimize: true,
+    minimizer: [
+      new CssMinimizerPlugin(),
+      new TerserPlugin()
+    ]
+  }
 }
