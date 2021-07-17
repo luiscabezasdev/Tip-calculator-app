@@ -2,8 +2,6 @@ import React from 'react';
 
 const Input = ({estado, cambioEstado, value, images, leyendaError, desicion}) => {
 
- /* let prueba = desicion === 0 ? true : false; */
-
   const prueba = () => {
     desicion === 0 ? true : false;
   }
@@ -17,7 +15,6 @@ const Input = ({estado, cambioEstado, value, images, leyendaError, desicion}) =>
           desicion === 0 ? <p className="error">{leyendaError} </p> : ''
           }
         </div>
-        
         <div>
           <p>
             <img src={images} alt=""/>

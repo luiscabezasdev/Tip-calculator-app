@@ -8,21 +8,14 @@ const App = () => {
   const [ bill, setBill ] = useState(0);
   const [ people, setPeople ] = useState(0);
   const [ value, setValue ] = useState(0);
-  
+  const [ numeric, setNumeric ] = useState();
+
   let calculo = (bill * value) / 100;
-  
-  let total = (bill / people) + Number(calculo / people);
-  
-  
+  let total = (bill / people) + (calculo / people);
   let totalPeople = total.toFixed(2);
   let amount = (calculo / people);
   let amountFix = amount.toFixed(2);
-  
-  let resultado = (value === 0) ? 0 : (value !== 0) ? totalPeople : 0 ;
-
-  console.log(value)
-  console.log('resultado ' + resultado);
-  console.log(people)
+  let resultado = (value === 0) ? (0.00).toFixed(2) : (value !== 0) ? totalPeople : (0.00).toFixed(2);
 
   return (
     <>
@@ -49,24 +42,23 @@ const App = () => {
                 porcentaje={value}
                 cambioPorcentaje={setValue}
                 />
-              <Button 
+              <Button
                 value={15}
                 porcentaje={value}
                 cambioPorcentaje={setValue}
                 />
-              <Button 
-                value={25} 
+              <Button
+                value={25}
                 porcentaje={value}
                 cambioPorcentaje={setValue}
               />
-              <Button 
-                value={50} 
+              <Button
+                value={50}
                 porcentaje={value}
                 cambioPorcentaje={setValue}
                 />
-              <input className="input__into" type="number" placeholder="Custom" />
+              <input className="input__into" type="number" placeholder="Custom" value={numeric} onChange={e => (setNumeric(e.target.value))}/>
             </div>
-            
             <Input
               value='Number of People'
               images={user}
@@ -93,20 +85,19 @@ const App = () => {
                   </p>
                   <span>/ person</span>
                 </div>
-
               </div>
               <div className="container__content--right-field">
                 <div className="container__content--right-value">
-                  ${isNaN(amountFix) ? 0 : (amountFix == Infinity) ? 0 : amountFix}
+                  ${isNaN(amountFix) ? (0.00).toFixed(2) : (amountFix == Infinity) ? (0.00).toFixed(2) : amountFix}
                 </div>
                 <br/>
                 <br/>
                 <div className="container__content--right-value">
-                  ${isNaN(resultado) ? 0 : (resultado === Infinity) ? 0 : resultado}
+                  ${isNaN(resultado) ? (0.00).toFixed(2) : (resultado === Infinity) ? (0.00).toFixed(2) : resultado}
                 </div>
               </div>
               </div>
-            <Button 
+            <Button
               value="RESET"
               style="right"
               porcentaje={value}
