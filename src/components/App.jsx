@@ -7,8 +7,8 @@ import user from '../images/Group.svg'
 const App = () => {
   const [ bill, setBill ] = useState(0);
   const [ people, setPeople ] = useState(0);
-  const [ value, setValue ] = useState(0)
-
+  const [ value, setValue ] = useState(0);
+  
   let calculo = (bill * value) / 100;
   
   let total = (bill / people) + Number(calculo / people);
@@ -22,6 +22,7 @@ const App = () => {
 
   console.log(value)
   console.log('resultado ' + resultado);
+  console.log(people)
 
   return (
     <>
@@ -34,6 +35,7 @@ const App = () => {
               images={dollar}
               estado={bill}
               cambioEstado={setBill}
+              leyendaError=""
               />
             <p className="container__text">Select Tip %</p>
             <div className="container__btn">
@@ -64,12 +66,14 @@ const App = () => {
                 />
               <input className="input__into" type="number" placeholder="Custom" />
             </div>
-            { people === 0 ? <p>Don't be zero</p> : '' }
+            
             <Input
               value='Number of People'
               images={user}
               estado={people}
               cambioEstado={setPeople}
+              desicion={people}
+              leyendaError="Don't be zero"
               />
           </div>
           <div className="container__content--right">

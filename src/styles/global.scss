@@ -100,7 +100,7 @@ body {
   }
   &__title {
     font-weight: 600;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
     font-size: 12px;
   }
   div {
@@ -149,7 +149,7 @@ body {
   cursor: pointer;
 }
 
-.btn:hover {
+.btn:focus {
   background-color: $color-primary;
   color: $color-neutral-dark;
 }
@@ -157,6 +157,19 @@ body {
 .right {
   color: $color-neutral-dark;
   background-color: $color-neutral-dark-one;
+}
+
+.errorInput {
+  display: flex;
+  justify-content: space-between;
+  background-color: $white !important;
+}
+
+.error {
+  color: orange;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: right;
 }
 
 @media screen and (max-width: 850px) {
