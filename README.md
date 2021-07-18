@@ -2,7 +2,7 @@
 
 Frontend Mentor - Tip calculator app solution
 
-![Design preview for the Tip calculator app coding challenge](../../images/proyecto.png)
+![Design preview for the Tip calculator app coding challenge](../images/proyecto.png)
 
 ## Deploying your project
 
